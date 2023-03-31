@@ -41,25 +41,30 @@
         <div class="form">
           <p>Email:</p>
           <input id="input_email" class="inputs" placeholder="Login" />
-          
-          <p>Senha:</p>
-          <input type="password" id="input_senha" class="inputs" placeholder="******" />
 
-          
+          <p>Senha:</p>
+          <input
+            type="password"
+            id="input_senha"
+            class="inputs"
+            placeholder="******"
+          />
         </div>
         <div type="submit" onclick="funcao()" class="button">Entrar</div>
       </div>
     </div>
     <div class="tamanho_conteudo"></div>
     <div class="footer">
-      <p>Feito com amor por um aluno &hearts; SpTech &copy; 2023</p>
+      <div>
+      <spam>Feito com amor por um aluno &hearts; SpTech &copy; 2023</spam>
+      </div>
       <br />
-      <p></p>
+      <div id="versao">v1.0.0</div>
     </div>
   </body>
 </html>
 <script>
-function funcao(){
-  alert('Bem vindo!')
-}
+  function funcao() {
+    alert("Bem vindo!");
+  }
 </script>
