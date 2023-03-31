@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 2</title>
+  </head>
+  <body>
+    Qual a nota do ENEM do aluno?
+    <input id="input_nota1" />
+    <br />
+    Qual a nota do vestibular interno do aluno?
+    <input id="input_nota2" />
+    <br />
+
+    <button onclick="verificarNota()">Avaliação</button>
+  </body>
+</html>
+
+<script>
+  function verificarNota() {
+    var nota1 = Number(input_nota1.value);
+    var nota2 = Number(input_nota2.value);
+
+    if (nota1 >= 800 || nota2 >= 700) {
+      alert(`Parabéns, aprovado!`);
+    } else {
+      alert(`Tente semestre que vem!`);
+    }
+  }
+</script>

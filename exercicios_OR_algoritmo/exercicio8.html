@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 8</title>
+  </head>
+  <body>
+    Qual o nome da empresa?
+    <input id="input_nome" />
+    <br />
+    Qual o valor da bolsa da empresa?
+    <input id="input_bolsa" />
+    <br />
+    Qual o valor do VR da empresa?
+    <input id="input_vr" />
+    <br />
+    Qual o tempo de deslocamento da empresa até a SPTech?
+    <input id="input_deslocamento" />
+    <br />
+
+    <button onclick="verificarEmpresa()">É preferida?</button>
+    <br />
+
+    <div id="div_exemplo"></div>
+  </body>
+</html>
+
+<script>
+  function verificarEmpresa() {
+    var nome = input_nome.value;
+    var bolsa = Number(input_bolsa.value);
+    var vr = Number(input_vr.value);
+    var deslocamento = Number(input_deslocamento.value);
+
+    if (bolsa >= 1800 || vr >= 20 || deslocamento <= 30) {
+      div_exemplo.innerHTML = `A empresa X é uma de suas preferências`;
+    } else {
+      div_exemplo.innerHTML = `A empresa X está fora da sua lista`;
+    }
+  }
+</script>

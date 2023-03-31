@@ -87,15 +87,24 @@ body {
 
 .form p {
   color: #b56383;
-  margin-left: 100px;
+  margin-left: 5rem;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
 
-.form .inputs {
-  border: none;
+.form #input_email {
+  height: 30px;
+  width: 12rem;
   border-color: #32b9cd;
-  border-radius: 3px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.form #input_senha {
+  height: 30px;
+  width: 12rem;
+  border-color: #32b9cd;
+  border-radius: 8px;
 }
 
 

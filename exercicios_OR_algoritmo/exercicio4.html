@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 4</title>
+  </head>
+  <body>
+    Qual a forma de pagamento?
+    <br />
+    - Dinheiro
+    <br />
+    - Cartão de débito
+    <br />
+    - Cartão de crédito
+    <br />
+    - Boleto
+    <br />
+    <input id="input_pagamento" />
+    <br />
+
+    <button onclick="analisarCompra()">Analisar Compra</button>
+  </body>
+</html>
+
+<script>
+  function analisarCompra() {
+    var pagamento = input_pagamento.value;
+
+    if (pagamento == "Dinheiro" || pagamento == "Cartão de débito") {
+      alert(`Você terá que pagar a vista`);
+    } else if (pagamento == "Cartão de crédito" || pagamento == "Boleto") {
+      alert(`Pagamento poderá ser parcelado`);
+    }
+  }
+</script>
