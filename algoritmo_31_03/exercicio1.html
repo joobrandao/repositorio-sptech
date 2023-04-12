@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 1</title>
+  </head>
+  <body>
+    <button onclick="aumentar()">Aumentar largura</button>
+    <button onclick="diminuir()">Diminuir largura</button>
+    <div id="div_exemplo">
+      <img src="sptech_logo.png" style="width: 200px" /><br />
+    </div>
+  </body>
+</html>
+
+<script>
+  var tamanho = 200;
+  function aumentar() {
+    tamanho += 10;
+    div_exemplo.innerHTML = `<img src="sptech_logo.png" style="width: ${tamanho}px;" /><br />`;
+  }
+
+  function diminuir() {
+    tamanho -= 10;
+    div_exemplo.innerHTML = `<img src="sptech_logo.png" style="width: ${tamanho}px" /><br />`;
+  }
+</script>

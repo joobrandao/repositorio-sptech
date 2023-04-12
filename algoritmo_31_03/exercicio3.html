@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input_valor" />
+
+    <div id="div_exemplo">
+      Total guardado no cofrinho: R$<span id="span_cofre">0</span><br />
+      Depósitos efetuados: <span id="span_deposito">0</span><br />
+      Retiradas efetuadas: <span id="span_retirada">0</span><br /><br />
+    </div>
+    <button onclick="depositar05()">Depositar 0,50</button>
+    <button onclick="depositar20()">Depositar 2,00</button>
+    <button onclick="retirar05()">Retirar 0,50</button>
+    <button onclick="retirar()">Retirar</button>
+  </body>
+</html>
+
+<script>
+  var valor = 0;
+  var deposito = 0;
+  var retirada = 0;
+  var historico = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
+  var x = 0;
+
+
+  function depositar05() {
+    valor = valor + 0.5;
+    deposito++;
+
+    historico[x] = 0.5
+    x++;
+
+    span_cofre.innerHTML = valor;
+    span_deposito.innerHTML = deposito;
+    
+  }
+
+  function depositar20() {
+    valor = valor + 2;
+    deposito++;
+
+    historico[x] = 2;
+    x++;
+
+    span_cofre.innerHTML = valor;
+    span_deposito.innerHTML = deposito;
+  }
+
+  function retirar05() {
+    valor = valor - 0.5;
+    retirada++;
+
+    historico[x] = -0.5;
+    x++;
+
+    span_cofre.innerHTML = valor;
+    span_retirada.innerHTML = retirada;
+  }
+
+  function retirar() {
+    valor = valor - hostorico[x];
+    retirada++;
+
+    span_cofre.innerHTML = valor;
+    span_retirada.innerHTML = retirada;
+
+    x = x - 1;
+  }
+</script>
