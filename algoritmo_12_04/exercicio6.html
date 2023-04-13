@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+    O que você mais ama na vida?
+    <input id="input_frase"></input><br>
+    Quanto você ama?
+    <input id="input_num"></input><br>
+
+    <button onclick="amor()">Expressar amor!</button>
+    <div id="conteudo"></div>
+</body>
+
+</html>
+
+<script>
+    function amor() {
+        var num = Number(input_num.value);
+        var frase = input_frase.value;
+        var padrao = 1;
+
+        while (padrao <= num) {
+            conteudo.innerHTML += `${padrao} - ${frase} <br>`;
+            padrao++;
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 10</title>
+</head>
+
+<body>
+    Digite um intervalo crescente:
+    <input id="input_num1"></input><input id="input_num2"></input>
+
+    <button onclick="crescentes()">S2 Pares!</button>
+    <div id="conteudo"></div>
+</body>
+
+</html>
+
+<script>
+    function crescentes() {
+        var num1 = Number(input_num1.value);
+        var num2 = Number(input_num2.value);
+
+        while (num1 <= num2) {
+            if (num1 % 2 == 0) {
+                conteudo.innerHTML += `${num1}<br>`
+            }
+            num1++;
+        }
+
+
+    }
+</script>

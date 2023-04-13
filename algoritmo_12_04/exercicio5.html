@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 5</title>
+  </head>
+  <body>
+    <button onclick="num()">Números cabalísticos!</button>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+  function num() {
+    var numero = 1;
+    while (numero <= 30) {
+      if (
+        numero != 3 &&
+        numero != 4 &&
+        numero != 7 &&
+        numero != 10 &&
+        numero != 12
+      ) {
+        conteudo.innerHTML += `${numero}<br>`;
+      }
+      numero++;
+    }
+  }
+</script>
