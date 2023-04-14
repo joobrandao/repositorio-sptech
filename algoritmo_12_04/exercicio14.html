@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 14</title>
+  </head>
+
+  <body>
+    Qual sua idade?<br />
+    <input id="input_idade" /><br /><br />
+
+    <button onclick="vida()">Linha da vida!</button>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+  function vida() {
+    var idade = Number(input_idade.value);
+    var anos = 0;
+
+    while (anos <= idade) {
+      if (anos <= 4) {
+        conteudo.innerHTML += `${anos} anos (Primeira Infância)<br>`;
+      } else if (anos <= 6) {
+        conteudo.innerHTML += `${anos} anos (Pré-Escolar)<br>`;
+      } else if (anos <= 10) {
+        conteudo.innerHTML += `${anos} anos (Segunda Infância)<br>`;
+      } else if (anos <= 18) {
+        conteudo.innerHTML += `${anos} anos (Adolescência)<br>`;
+      } else if (anos <= 50) {
+        conteudo.innerHTML += `${anos} anos (Adulto)<br>`;
+      } else if (anos <= 100) {
+        conteudo.innerHTML += `${anos} anos (Melhor Idade)<br>`;
+      } else if (anos > 100) {
+        conteudo.innerHTML += `${anos} anos (Matusalém)<br>`;
+      }
+
+      anos++;
+    }
+  }
+</script>

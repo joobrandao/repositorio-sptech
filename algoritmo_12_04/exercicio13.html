@@ -4,27 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercicio 12</title>
+    <title>Exercicio 13</title>
   </head>
 
   <body>
-    Selecione uma tabuada (2 a 9):<br />
-    <input id="input_tabuada" /><br /><br />
+    De quantos em quantos dias você faz musculação?<br />
+    <input id="input_musculacao" /><br /><br />
 
-    Até que número a tabuada deve ser construída?<br />
-    <input id="input_num" /><br />
-
-    <button type="submit" onclick="tabuada()">Ver Tabuada!</button>
+    <button onclick="malhar()">Exibir rotina mensal!</button>
     <div id="conteudo"></div>
   </body>
 </html>
 
 <script>
-  function tabuada() {
-    var tabuada = Number(input_tabuada.value);
-    var num = Number(input_num.value);
+  function malhar() {
+    var musculacao = Number(input_musculacao.value);
+    var dias = 1;
     var padrao = 1;
-    conteudo.innerHTML = "";
 
+    while (dias <= 30) {
+      if (dias == 1) {
+        conteudo.innerHTML = `Dia ${dias} - Musculação<br>`;
+      } else if (dias == padrao + musculacao) {
+        conteudo.innerHTML += `Dia ${dias} - Musculação<br>`;
+        padrao = dias;
+      } else {
+        conteudo.innerHTML += `Dia ${dias} - Comer, dormir etc<br>`;
+      }
+
+      dias++;
+    }
   }
 </script>
