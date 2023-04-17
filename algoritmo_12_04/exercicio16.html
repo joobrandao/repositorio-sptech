@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 16</title>
+  </head>
+
+  <body>
+    Quantos pessoas vão entrar no carro?<br />
+    <input id="input_passageiros" /><br /><br />
+
+    <button onclick="carona()">#PartiuCarona!</button>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+   function carona() {
+    var passageiros = Number(input_passageiros.value);
+    var contador = 1;
+
+    while(contador <= passageiros){
+    while (contador <= 5) {
+      if (contador == 1) {
+        conteudo.innerHTML += `Entrou o ${contador}° passageiro (que é o(a) motorista)<br>`;
+      } else {
+        conteudo.innerHTML += `Entrou o ${contador}° passageiro<br>`;
+      }
+
+      contador++;
+    }
+
+    conteudo.innerHTML += `O ${contador}° passageiro terá que esperar!<br>`;
+    contador++;
+}
+
+  }
+</script>
