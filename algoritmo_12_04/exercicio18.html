@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 18</title>
+  </head>
+  <body>
+    Quantas Coca-Cola's você acha que já tomou na vida?<br />
+    <input id="input_coca" /><br />
+
+    <button onclick="verQtd()">Ver Quantidade!</button><br />
+
+    <div
+      id="conteudo"
+      style="display: flex; flex-direction: row; justify-content: space-around"
+    ></div>
+  </body>
+</html>
+
+<script>
+  function verQtd() {
+    var coca = Number(input_coca.value);
+    var contador = 1;
+    conteudo.innerHTML = "";
+
+    while (contador <= coca) {
+      conteudo.innerHTML += `<img src="imagem_coca.jpg" style="max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;">`;
+      contador++;
+    }
+  }
+</script>

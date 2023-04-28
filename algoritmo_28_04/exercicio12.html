@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 12</title>
+  </head>
+
+  <body>
+    Selecione uma tabuada:<br />
+    <select name="tabuada" id="input_tabuada">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option></select
+    ><br />
+
+    Até que número a tabuada deve ser construída?<br />
+    <input id="input_num" /><br />
+
+    <button type="submit" onclick="tabuada()">Ver Tabuada!</button>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+  function tabuada() {
+    var tabuada = Number(input_tabuada.value);
+    var num = Number(input_num.value);
+
+    for (var i = 1; i <= num; i++) {
+      if (i % 2 == 0) {
+        conteudo.innerHTML += `<p style="color: blue">${tabuada} x ${i} = ${
+          tabuada * i
+        }</p>`;
+
+        padrao++;
+      } else {
+        conteudo.innerHTML += `<p style="color: red">${tabuada} x ${i} = ${
+          tabuada * i
+        }</p>`;
+
+        padrao++;
+      }
+    }
+  }
+</script>

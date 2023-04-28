@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 7</title>
+</head>
+
+<body>
+    Digite um número:
+    <input id="input_num"></input><br>
+
+    <button onclick="multiplos()">Adoro múltiplos de 5!</button>
+    <div id="conteudo"></div>
+</body>
+
+</html>
+
+<script>
+    function multiplos() {
+        var num = Number(input_num.value);
+
+        for (var i = 0; i <= num; i++) {
+            if (i % 5 == 0) {
+                conteudo.innerHTML += `${i}<br>`
+            }
+        }
+    }
+</script>
