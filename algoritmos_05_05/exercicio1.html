@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 1</title>
+  </head>
+  <body>
+    <input type="text" id="input_fruta" />
+    <button onclick="pesquisar()">Pesquisar</button>
+  </body>
+</html>
+
+<script>
+  var lista = ["Banana", "Uva", "Manga"];
+
+  function pesquisar() {
+    var fruta = document.getElementById("input_fruta");
+
+    for (var i = 0; i < lista.length; i++) {
+      if (lista[i] == fruta.value) {
+        alert("A fruta " + fruta.value + " existe no array");
+        return;
+      }
+    }
+    alert("A fruta " + fruta.value + " não existe no array");
+  }
+</script>

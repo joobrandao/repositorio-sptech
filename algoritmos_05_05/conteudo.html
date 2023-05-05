@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Fruta: <input type="text" id="input_fruta" />
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="tirar()">Tirar</button>
+
+    <div id="div_frutas"></div>
+  </body>
+</html>
+
+<script>
+  var lista = [];
+
+  function adicionar() {
+    var fruta = document.getElementById("input_fruta").value.toUpperCase();
+
+    if (lista.includes(fruta)) {
+      alert("Fruta já adicionada");
+      document.getElementById("input_fruta").focus();
+      return;
+    }
+
+    if (fruta == "") {
+      alert("Digite uma fruta");
+      document.getElementById("input_fruta").focus();
+      return;
+    }
+
+    lista.push(fruta);
+
+    var div_frutas = `Primeira Fruta: ${lista[0]} <br> 
+    Ultima Fruta: ${lista[lista.length - 1]} <br>
+    Quantidade de Frutas: ${lista.length} <br>
+    <ol>`;
+
+    for (var i = 0; i < lista.length; i++) {
+      div_frutas += `<li> ${lista[i]} </li>`;
+    }
+
+    div_frutas += "</ol>";
+
+    document.getElementById("div_frutas").innerHTML = div_frutas;
+
+    document.getElementById("input_fruta").value = "";
+
+    document.getElementById("input_fruta").focus();
+  }
+
+  function tirar() {
+    var fruta = document.getElementById("input_fruta").value.toUpperCase();
+
+    if (fruta == "") {
+      alert("Digite uma fruta");
+      document.getElementById("input_fruta").focus();
+      return;
+    }
+
+    if (lista.includes(fruta)) {
+      var indice = lista.indexOf(fruta);
+      lista.splice(indice, 1);
+    } else {
+      alert("Fruta não encontrada");
+      document.getElementById("input_fruta").focus();
+      return;
+    }
+
+    if (lista.length == 0) {
+      document.getElementById("div_frutas").innerHTML = "";
+      document.getElementById("input_fruta").value = "";
+      document.getElementById("input_fruta").focus();
+      return;
+    }
+
+    var div_frutas = `Primeira Fruta: ${lista[0]} <br> 
+    Ultima Fruta: ${lista[lista.length - 1]} <br>
+    Quantidade de Frutas: ${lista.length} <br>
+    <ol>`;
+    for (var i = 0; i < lista.length; i++) {
+      div_frutas += `<li> ${lista[i]} </li>`;
+    }
+
+    div_frutas += "</ol>";
+
+    document.getElementById("div_frutas").innerHTML = div_frutas;
+
+    document.getElementById("input_fruta").value = "";
+
+    document.getElementById("input_fruta").focus();
+  }
+</script>
+
+<style>
+  button:focus {
+    outline: none;
+  }
+  button:focus-visible {
+    outline: 3px solid red;
+  }
+</style>

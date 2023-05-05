@@ -1,81 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercicio Algoritmo 26_04</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
 
 <script>
-    var notebookCaio = {
-  marca: "Dell",
-  tipo: "Ultrabook",
-  especificação: {
-    SSD: "256",
-    Memória: "32GB",
-    Processador: "I7",
-    SO: "Windows10",
-  },
-};
+  var notebook = {
+    dono: professor.nome,
+    marca: "Dell",
+    tipo: "Ultrabook",
+    especificação: {
+      SSD: "256",
+      Memória: "32GB",
+      Processador: "I7",
+      SO: "Windows10",
+    },
+  };
 
-var caio = {
-  notebook: notebookCaio,
-  nome: "Caio",
-  idade: 18,
-  matéria: "Algoritmo",
-  turma: "AADS",
-  humor: "Feliz",
-  verificarLiberação: function () {
-    if (humor === "Feliz") {
-      alert(`Vazem da minha aula!`);
-    } else {
-      alert(`Fiquem até 16:10`);
-    }
-  },
-};
+  var professor = {
+    nome: "Caio",
+    idade: 18,
+    matéria: "Algoritmos",
+    turma: "AADS",
+    verificarLiberação: function (humor) {
+      if (humor === "Feliz") {
+        console.log(`Vazem da minha aula!`);
+      } else if (humor === "Triste") {
+        console.log(`Fiquem até 16:30`);
+      } else {
+        console.log(`Fiquem até 16:10`);
+      }
+    },
+  };
 
-var sala3A = {
-  quantidadeCadeiras: 40,
-  quantidadeMesas: 10,
-  notebook: notebook,
-  qtdNotebooks: 20,
-  quantidadeLousas: 2,
-  quantidadeAlunos: 40,
-  quantidadeAlunosComNotebook: 10,
-  professor: caio,
-  verificarDisponibilidadeCadeiras: function () {
-    if (this.quantidadeAlunos > this.quantidadeCadeiras) {
-      alert(`A sala a não comporta essa quantidade de alunos`);
-    } else {
-      alert(`Começar a aula!`);
-    }
-  },
-  verificarDisponibilidadeNotebooks: function () {
-    if (
-      this.quantidadeAlunos - this.quantidadeAlunosComNotebook <=
-      this.notebooks
+  var sala3A = {
+    quantidadeCadeiras: 70,
+    quantidadeMesas: 4,
+    qtdNotebooks: 40,
+    professor: caio,
+    verificarDisponibilidadeCadeiras: function (quantidadeAlunos) {
+      if (quantidadeAlunos > this.quantidadeCadeiras) {
+        console.log(`A sala a não comporta essa quantidade de alunos`);
+      } else {
+        console.log(`Começar a aula!`);
+      }
+    },
+    verificarDisponibilidadeNotebooks: function (
+      quantidadeAlunos,
+      quantidadeAlunosComNotebook
     ) {
-      alert(`Podemos codar!`);
-    } else if (
-      (this.quantidadeAlunos - this.quantidadeAlunosComNotebook) / 2 <=
-      this.notebooks
-    ) {
-      alert(`Formem duplas e codem!`);
-    } else {
-      alert(`Não da para codar :(`);
-    }
-  },
-  verificarConteudo: function(){
-    if(this.quantidadeAlunos >= this.quantidadeCadeiras / 2){
-      alert(`Conteudo novo e Exercícios`)
-    }else{
-      alert(`Só exercicio hoje!`)
-    }
-  }
-};
+      if (quantidadeAlunos - quantidadeAlunosComNotebook <= this.qtdNotebooks) {
+        console.log(`Podemos codar!`);
+      } else if (
+        (quantidadeAlunos - quantidadeAlunosComNotebook) / 2 <=
+        this.qtdNotebooks
+      ) {
+        console.log(`Formem duplas e codem!`);
+      } else {
+        console.log(`Não da para codar :(`);
+      }
+    },
+    verificarConteudo: function (quantidadeAlunos) {
+      if (quantidadeAlunos >= this.quantidadeCadeiras / 2) {
+        console.log(`Conteudo novo e Exercícios`);
+      } else {
+        console.log(`Só exercicio hoje!`);
+      }
+    },
+  };
 </script>
