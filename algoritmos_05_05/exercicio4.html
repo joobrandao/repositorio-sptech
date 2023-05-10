@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 4</title>
+  </head>
+  <body>
+    <input id="input_filme" />
+    <button onclick="cadastrar()">Cadastrar Filme!</button><br />
+    <button onclick="verificar()">Ver Favoritos!</button><br />
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+  var filmes = [];
+
+  function cadastrar() {
+    var filme = input_filme.value;
+    filmes.push(filme);
+  }
+
+  function verificar() {
+    if (filmes[1] == null) {
+      alert(`Cadastre no mínimo 2 filmes!`);
+    } else
+      conteudo.innerHTML = `Total: ${filmes.length}<br>
+        O que mais gosta é ${filmes[0]}<br>
+        E desses, o que menos gosta é ${filmes[filmes.length - 1]}`;
+  }
+</script>
