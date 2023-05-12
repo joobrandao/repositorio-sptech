@@ -24,7 +24,7 @@
   }
 
   function verViagem1() {
-    if (destinos[0] == null) {
+    if (destinos.length == 0) {
       conteudo.innerHTML = `Ainda não viajou`;
     } else {
       conteudo.innerHTML = `Primeira viagem: ${destinos[0]}`;
@@ -40,7 +40,7 @@
   }
 
   function verUltimaViagem() {
-    if (destinos[0] == null) {
+    if (destinos.length == 0) {
       conteudo.innerHTML = `Ainda não viajou`;
     } else {
       conteudo.innerHTML = `Última viagem: ${destinos[destinos.length - 1]}`;

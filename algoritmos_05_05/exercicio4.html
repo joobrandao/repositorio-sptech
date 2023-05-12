@@ -23,7 +23,7 @@
   }
 
   function verificar() {
-    if (filmes[1] == null) {
+    if (filmes.length < 2) {
       alert(`Cadastre no mínimo 2 filmes!`);
     } else
       conteudo.innerHTML = `Total: ${filmes.length}<br>

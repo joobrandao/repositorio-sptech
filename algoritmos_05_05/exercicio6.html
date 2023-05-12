@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 6</title>
+  </head>
+  <body>
+    <input type="text" id="input_filme" /><button onclick="adicionar()">
+      Adicionar!</button
+    ><br />
+    <div id="div_lista"></div>
+  </body>
+</html>
+
+<script>
+  var lista = [];
+
+  function adicionar() {
+    var filme = input_filme.value;
+    lista.push(filme);
+    div_lista.innerHTML = "";
+
+    for (var i = 0; i < lista.length; i++) {
+      div_lista.innerHTML += `${i + 1} - ${lista[i]} <br>`;
+    }
+  }
+</script>
