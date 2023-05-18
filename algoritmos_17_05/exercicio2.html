@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 2</title>
+  </head>
+  <body>
+    Insira o valor mínimo <input id="input_min" /><br />
+    Insira o valor máximo <input id="input_max" /><br />
+    <button onclick="sortear()">Sortear!</button>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+  var listaNum = [1, 7, 8, 9, 2];
+  function sortear() {
+    var max = Number(input_max.value);
+    var min = Number(input_min.value);
+
+    if (min == 0) {
+      min = 1;
+    }
+
+    var aleatorio = parseInt(Math.random() * max + min);
+
+    conteudo.innerHTML = aleatorio;
+
+    for (var i = 0; i < listaNum.length; i++) {
+      if (aleatorio == listaNum[i]) {
+        console.log(
+          `Parabéns, o número ${aleatorio} está na posição ${i} do nosso array!`
+        );
+      }
+    }
+  }
+</script>

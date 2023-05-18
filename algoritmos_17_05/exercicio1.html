@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 1</title>
+  </head>
+  <body>
+    <button onclick="sortear()">Sortear imagem!</button>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+  var lista = [
+    `<img src="./assets/bruno_circulo.png">`,
+    `<img src="./assets/john_circulo.png">`,
+    `<img src="./assets/metallica_circulo.png">`,
+    `<img src="./assets/notas.jpg">`,
+    `<img src="./assets/sola_circulo.png">`,
+  ];
+
+  function sortear() {
+    conteudo.innerHTML = "";
+    if (lista.length > 0) {
+      var sorteado = parseInt(Math.random() * lista.length);
+
+      conteudo.innerHTML = lista[sorteado];
+      lista.splice(sorteado, 1);
+    } else {
+      console.log(`Todas as imagens já foram sorteadas`);
+      conteudo.innerHTML = "";
+    }
+  }
+</script>

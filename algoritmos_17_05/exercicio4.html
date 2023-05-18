@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 4</title>
+  </head>
+  <body>
+    <button onclick="sortear()">Sortear momento do dia!</button>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<script>
+  function sortear() {
+    var aleatorio = parseInt(Math.random() * 24);
+
+    if (aleatorio >= 0 && aleatorio <= 11) {
+      conteudo.innerHTML = `bom dia, flor do dia, são ${aleatorio}hrs!`;
+    } else if (aleatorio >= 12 && aleatorio <= 17) {
+      conteudo.innerHTML = `Boa tarde, já vai tarde! São ${aleatorio}hrs!`;
+    } else {
+      conteudo.innerHTML = `Boa noite, durma bem! São ${aleatorio}hrs!`;
+    }
+  }
+</script>
