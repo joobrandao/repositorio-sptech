@@ -4,32 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pedido de Pizza</title>
   </head>
   <body>
-    Informe a sua senha! <input id="input_senha" /> <br />
-    Me informe qual a senha Top! <input id="input_senhaTop" /><br />
-    <button onclick="pedidoPizzaFunc()"></button>
+    Qual o sabor da pizza que você quer? <input id="input_senha" /> <br />
+    <button onclick="pedidoPizzaFunc()">Confirmar senha</button>
   </body>
 </html>
 
 <script>
+  var senhaTop = ["Calabresa", "Portuguesa", "Marguerita"];
+  var VouF;
   function pedidoPizzaFunc() {
     var senhaUsuario = input_senha.value;
-    var senhaTop = input_senhaTop.value;
-    var pedidoPizza = new Promise(function (entregarResultado, entregarErro) {
-      if (senhaUsuario == senhaTop) {
-        entregarResultado("Senha correta, seja bem vindo!");
+    for (var i = 0; i < senhaTop.length; i++) {
+      if (senhaUsuario == senhaTop[i]) {
+        VouF = true;
+        break;
       } else {
-        entregarErro("Ta tentando hackear é?");
+        VouF = false;
+      }
+    }
+
+    var pedidoPizza = new Promise(function (entregarResultado, entregarErro) {
+      if (VouF == true) {
+        entregarResultado("Beleza, preparando seu pedido!");
+      } else {
+        entregarErro("Esse sabor de pizza não existe!");
       }
     });
     pedidoPizza
       .then(function (resposta) {
-        console.log("Deu bão!");
+        console.log(resposta);
       })
       .catch(function (erro) {
-        console.log("Deu ruim!");
+        console.log(erro);
       });
   }
 </script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  var numAleatorios = [4, 19, 9438, 28, 95, 1, 5 ,1425, 35675, 125, 6724657, 143523, 6346, 2357, 1];
+
+  function ordenarPorTamanho() {
+    for (var x = 0; x < numAleatorios.length; x++) {
+      for (var y = 0; y < numAleatorios.length; y++) {
+        if (numAleatorios[x] < numAleatorios[y]) {
+          var contas = numAleatorios[x];
+          numAleatorios[x] = numAleatorios[y];
+          numAleatorios[y] = contas;
+        }
+      }
+    }
+    console.log(numAleatorios);
+  }
+  
+</script>
