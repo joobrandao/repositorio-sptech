@@ -23,8 +23,9 @@
     if (min == 0) {
       min = 1;
     }
-
-    var aleatorio = parseInt(Math.random() * max + min);
+    var intervalo = max - min + 1;
+    var aleatorio = parseInt(Math.random() * intervalo + min);
+    console.log(aleatorio);
 
     conteudo.innerHTML = aleatorio;
 
@@ -35,5 +36,29 @@
         );
       }
     }
+
+    // if (aleatorio == listaNum[0]) {
+    //   console.log(
+    //     `Parabéns, o número ${aleatorio} está na posição 0 do nosso array!`
+    //   );
+    // } else if (aleatorio == listaNum[1]) {
+    //   console.log(
+    //     `Parabéns, o número ${aleatorio} está na posição 1 do nosso array!`
+    //   );
+    // } else if (aleatorio == listaNum[2]) {
+    //   console.log(
+    //     `Parabéns, o número ${aleatorio} está na posição 2 do nosso array!`
+    //   );
+    // } else if (aleatorio == listaNum[3]) {
+    //   console.log(
+    //     `Parabéns, o número ${aleatorio} está na posição 3 do nosso array!`
+    //   );
+    // } else if (aleatorio == listaNum[4]) {
+    //   console.log(
+    //     `Parabéns, o número ${aleatorio} está na posição 4 do nosso array!`
+    //   );
+    // } else {
+    //   console.log(`O número ${aleatorio} não está no nosso array!`);
+    // }
   }
 </script>

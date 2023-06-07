@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Informe a sua senha! <input id="input_senha" /> <br />
+    Me informe qual a senha Top! <input id="input_senhaTop" /><br />
+    <button onclick="pedidoPizzaFunc()"></button>
+  </body>
+</html>
+
+<script>
+  function pedidoPizzaFunc() {
+    var senhaUsuario = input_senha.value;
+    var senhaTop = input_senhaTop.value;
+    var pedidoPizza = new Promise(function (entregarResultado, entregarErro) {
+      if (senhaUsuario == senhaTop) {
+        entregarResultado("Senha correta, seja bem vindo!");
+      } else {
+        entregarErro("Ta tentando hackear é?");
+      }
+    });
+    pedidoPizza
+      .then(function (resposta) {
+        console.log("Deu bão!");
+      })
+      .catch(function (erro) {
+        console.log("Deu ruim!");
+      });
+  }
+</script>

@@ -24,7 +24,8 @@
     div_lista.innerHTML = "";
 
     for (var i = lista.length - 1; i >= 0; i--) {
-      div_lista.innerHTML += `${lista[i]} <br />`;
+      var x = lista.length - i;
+      div_lista.innerHTML += `${x} ${lista[i]} <br />`;
     }
   }
 </script>
