@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function ordenarComQuickSort(arrayzao) {
+    // Verifica se o arrayzao tem tamanho menor ou igual a 1
+    // Se sim, retorna o próprio arrayzao
+    if (arrayzao.length <= 1) {
+      return arrayzao;
+    }
+
+    // Seleciona o último elemento do arrayzao como pivô
+    const pivô = arrayzao[arrayzao.length - 1];
+    const esquerda = []; // Array para armazenar elementos menores que o pivô
+    const direita = []; // Array para armazenar elementos maiores que o pivô
+
+    // Percorre o arrayzao a partir do primeiro elemento até o penúltimo elemento
+    for (let i = 0; i < arrayzao.length - 1; i++) {
+      // Verifica se o elemento atual é menor que o pivô
+      // Se sim, adiciona ao array esquerda
+      // Caso contrário, adiciona ao array direita
+      if (arrayzao[i] < pivô) {
+        esquerda.push(arrayzao[i]);
+      } else {
+        direita.push(arrayzao[i]);
+      }
+    }
+
+    // Utiliza recursão para ordenar os subarrays left e right
+    // e combina-os com o pivô em um novo array ordenado
+    return [...ordenarComQuickSort(esquerda), pivô, ...ordenarComQuickSort(direita)];
+  }
+
+  // Exemplo de uso
+  const arrayAleatorio = [7, 2, 1, 6, 8, 5, 3, 4];
+  console.log(ordenarComQuickSort(arrayAleatorio));
+</script>

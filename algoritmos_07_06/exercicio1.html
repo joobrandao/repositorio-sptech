@@ -10,19 +10,29 @@
 </html>
 
 <script>
-  var numAleatorios = [4, 19, 9438, 28, 95, 1, 5 ,1425, 35675, 125, 6724657, 143523, 6346, 2357, 1];
+  var numAleatorios = [
+    4, 19, 9438, 28, 95, 1, 5, 1425, 35675, 125, 6724657, 143523, 6346, 2357, 1
+  ]; //Declaração do array numAleatorios que contém uma lista de números.
 
   function ordenarPorTamanho() {
+    // Definição da função ordenarPorTamanho, que não recebe nenhum argumento.
     for (var x = 0; x < numAleatorios.length; x++) {
+      // O primeiro laço for é usado para percorrer o array numAleatorios. A variável x é o índice atual sendo comparado.
       for (var y = 0; y < numAleatorios.length; y++) {
+        // O segundo laço for é usado para comparar o elemento numAleatorios[x] com todos os outros elementos do array. A variável y é o índice usado para a comparação.
+
         if (numAleatorios[x] < numAleatorios[y]) {
-          var contas = numAleatorios[x];
-          numAleatorios[x] = numAleatorios[y];
-          numAleatorios[y] = contas;
+          // Dentro do segundo laço, a condição if verifica se o elemento numAleatorios[x] é menor que o elemento numAleatorios[y].
+          // Se a condição for verdadeira, isso significa que os elementos estão na ordem errada e precisa ocorrer uma troca. Para isso, é feita a seguinte sequência de operações:
+
+          var contas = numAleatorios[x]; // a. O valor de numAleatorios[x] é armazenado na variável contas.
+          numAleatorios[x] = numAleatorios[y]; // b. O valor de numAleatorios[y] é atribuído a numAleatorios[x].
+
+          numAleatorios[y] = contas; // c. O valor de contas é atribuído a numAleatorios[y].
+          // Após os dois laços for percorrerem todo o array, o array numAleatorios estará ordenado em ordem crescente.
         }
       }
     }
-    console.log(numAleatorios);
-  }
-  
+    console.log(numAleatorios); // O resultado é exibido no console usando console.log(numAleatorios).
+  } // Portanto, quando você chamar a função ordenarPorTamanho, o array numAleatorios será modificado e exibido no console em ordem crescente.
 </script>

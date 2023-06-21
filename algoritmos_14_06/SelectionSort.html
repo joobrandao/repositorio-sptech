@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceito</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+function organizarComSelectionSort(arrayzao) {
+  var tamanho = arrayzao.length;
+  
+  for (var x = 0; x < tamanho - 1; x++) {
+    var menorIndex = x;
+    
+    for (var y = x + 1; y < tamanho; y++) {
+      if (arrayzao[y] < arrayzao[menorIndex]) {
+        menorIndex = y;
+      }
+    }
+    
+    if (menorIndex !== x) {
+      [arrayzao[x], arrayzao[menorIndex]] = [arrayzao[menorIndex], arrayzao[x]];
+    }
+  }
+  
+  return arrayzao;
+}
+
+// Exemplo de uso
+var aleatorio = [9, 3, 7, 1, 5, 8, 2, 6, 4];
+var sortedNumbers = organizarComSelectionSort(aleatorio);
+console.log(aleatorio);
+
+
+</script>
